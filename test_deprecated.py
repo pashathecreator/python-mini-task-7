@@ -33,10 +33,10 @@ def test_deprecated_with_will_be_removed_only(capfd):
 
 def test_deprecated_without_parameters(capfd):
     @deprecated
-    def func():
+    def foo():
         return "Function result"
 
-    result = func()
+    result = foo()
     captured = capfd.readouterr()  
     assert captured.out.strip() == "Warning: function foo is deprecated. It will be removed in future versions."
     assert result == "Function result"
